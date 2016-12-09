@@ -11,7 +11,7 @@ import com.rosa.library.SpeechRecognition.SpeechRecognition;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final int SPEECH_RECOGNITION_REQ_CODE = 1;
-    public SpeechRecognition recognizer;
+    public SpeechRecognition speechRecognition;
     private TextView tvRecognitionTest;
 
     @Override
@@ -21,19 +21,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvRecognitionTest = (TextView) findViewById(R.id.tv_recognition_test);
         tvRecognitionTest.setOnClickListener(this);
         // Init object
-        recognizer = SpeechRecognition.newInstance(this, SPEECH_RECOGNITION_REQ_CODE);
+        speechRecognition = SpeechRecognition.newInstance(this, SPEECH_RECOGNITION_REQ_CODE);
     }
 
     @Override
     public void onClick(View view) {
         // Show intent dialog.
-        recognizer.speechInput();
+        speechRecognition.speechInput();
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         // Get resulted text
-        tvRecognitionTest.setText(recognizer.getResultedText(requestCode, resultCode, data));
+        tvRecognitionTest.setText(speechRecognition.getResultedText(requestCode, resultCode, data));
     }
 }
