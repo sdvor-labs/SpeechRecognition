@@ -6,11 +6,12 @@
 
  Provide the gradle dependency
 
- `compile 'com.github.sdvor-labs:speech-recognition:0.0.1'`
+ ```compile 'com.github.sdvor-labs:speech-recognition:0.0.1'```
 
  ## Example
 
- `public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+ ```
+ public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
       private static final int SPEECH_RECOGNITION_REQ_CODE = 1;
       public SpeechRecognition speechRecognition;
@@ -38,4 +39,5 @@
           // Get resulted text
           tvRecognitionTest.setText(speechRecognition.getResultedText(requestCode, resultCode, data));
       }
-  }`
+  }
+  ```
