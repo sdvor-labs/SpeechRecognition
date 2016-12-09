@@ -4,11 +4,27 @@
 
 ## Setup
 
- Provide the gradle dependency
+### Gradle
+```
+compile 'com.github.sdvor-labs:speech-recognition:0.0.1'
+```
+### Maven
+```
+<dependency>
+  <groupId>com.github.sdvor-labs</groupId>
+  <artifactId>speech-recognition</artifactId>
+  <version>0.0.1</version>
+  <type>pom</type>
+</dependency>
+```
+### Ivy
+```
+<dependency org='com.github.sdvor-labs' name='speech-recognition' rev='0.0.1'>
+  <artifact name='speech-recognition' ext='pom' ></artifact>
+</dependency>
+```
 
- ```compile 'com.github.sdvor-labs:speech-recognition:0.0.1'```
-
- ## Example
+## Example
 
  ```
  public class MainActivity extends AppCompatActivity implements View.OnClickListener {
