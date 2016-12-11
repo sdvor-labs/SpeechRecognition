@@ -2,14 +2,14 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.1"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 25
-        versionCode 1
-        versionName "0.0.1"
+        targetSdkVersion rootProject.ext.compileSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
     }
     buildTypes {
         release {
@@ -21,7 +21,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    provided 'com.android.support:appcompat-v7:25.0.1'
+    provided "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
 }
 
 Properties properties = new Properties()
@@ -35,7 +35,7 @@ publish {
     userOrg = 'sdvor'
     groupId = 'com.github.sdvor-labs'
     artifactId = 'speech-recognition'
-    publishVersion = '0.0.1'
+    publishVersion = rootProject.ext.versionName
     licences = ['MIT']
     desc = 'Speech recognition library on based RecognizerIntent'
     website = 'https://github.com/sdvor-labs/SpeechRecognition'

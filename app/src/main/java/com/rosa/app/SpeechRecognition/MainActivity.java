@@ -1,4 +1,4 @@
-package com.rosa.SpeechRecognition;
+package com.rosa.app.SpeechRecognition;
 
 import android.content.Intent;
 import android.os.Bundle;
